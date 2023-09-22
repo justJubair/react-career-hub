@@ -20,6 +20,7 @@ const MainLayout = createBrowserRouter([
       },
       {
         path: "/appliedJobs",
+        loader: ()=>fetch('jobs.json'),
         element: <AppliedJobs/>
       },
       {
