@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { saveJobIdLS } from "../../components/LocalStorage/LocalStorage";
+import { getJobIdLS, saveJobIdLS } from "../../components/LocalStorage/LocalStorage";
 import { FaDollarSign, FaRegCalendarAlt, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const JobDetails = () => {
@@ -22,7 +22,15 @@ const JobDetails = () => {
   } = viewedJob;
 
   const handleApply = () => {
-    toast("Successfully applied");
+   
+    const savedJobId = getJobIdLS();
+    const isExist = savedJobId.find(jobId => idInt === jobId);
+    if(isExist){
+      toast.warn("Already Applied")
+    } else{
+      toast("Successfully applied");
+    }
+    console.log(savedJobId)
     saveJobIdLS(idInt);
   };
 
