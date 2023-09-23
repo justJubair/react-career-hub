@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./components/Root/Root";
 import Home from "./components/Home/Home";
-import Blog from "./pages/Blog/Blog";
+
 import AppliedJobs from "./pages/AppliedJobs/AppliedJobs";
 import JobDetails from "./pages/JobDetails/JobDetails";
+import Login from "./pages/Login/Login";
 
 const MainLayout = createBrowserRouter([
   {
@@ -15,8 +16,8 @@ const MainLayout = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/blog",
-        element: <Blog />,
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/appliedJobs",
@@ -25,7 +26,7 @@ const MainLayout = createBrowserRouter([
       },
       {
         path: "/jobDetails/:id",
-        loader: ()=> fetch('jobs.json'),
+        loader: ()=> fetch('../jobs.json'),
         element: <JobDetails/>
       }
     ],

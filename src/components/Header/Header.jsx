@@ -1,17 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Header.css'
 
 const Header = () => {
   const links = (
     <>
       <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/statistics'>Statistics</NavLink></li>
+    
 
       <li>
         <NavLink to='/appliedJobs'>Applied Jobs</NavLink>
       </li>
       <li>
-        <NavLink to='/blog'>Blog</NavLink>
+        <NavLink to='/login'>Login</NavLink>
       </li>
     </>
   );
@@ -50,7 +50,8 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">Start Applying</a>
+      <Link to='/login'>
+      <button className="btn text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">Start Applying</button></Link>
       </div>
     </div>
   );

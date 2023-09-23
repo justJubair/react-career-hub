@@ -4,6 +4,7 @@ import { getJobIdLS } from "../../components/LocalStorage/LocalStorage";
 import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import swal from "sweetalert";
+import SecondBanner from "../../components/SecondBanner/SecondBanner";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
@@ -49,39 +50,40 @@ const AppliedJobs = () => {
     swal("All Removed", "successfully deleted", "success");
   };
   return (
-    <div className="mt-8">
-      
-      
-        <div className="flex justify-between">
-        <button onClick={handleRemoveAll} className={`btn btn-error text-white ${!displayJobs.length && 'hidden'}`}>
-            Remove All
-          </button>
-          <details className={`dropdown ${noData && 'hidden'}`}>
-            <summary className="m-1 btn">filter</summary>
-            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-              <li>
-                <a onClick={() => handleFilter("all")}>All</a>
-              </li>
-              <li>
-                <a onClick={() => handleFilter("remote")}>Remote</a>
-              </li>
-              <li>
-                <a onClick={() => handleFilter("onsite")}>OnSite</a>
-              </li>
-            </ul>
-          </details>
-        </div>
-    
-      {noData ? (
-        <p className="flex items-center justify-center text-xl font-semibold h-[50vh] text-center">{noData}</p>
-      ) : (
-        <div className="flex flex-col gap-6 my-4">
-          {displayJobs?.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
-        </div>
-      )}
-    </div>
+  <>
+  <SecondBanner>Applied Jobs</SecondBanner>
+    <div className="mt-8 mb-24">
+      <div className="flex justify-between">
+      <button onClick={handleRemoveAll} className={`btn btn-error text-white ${!displayJobs.length && 'hidden'}`}>
+          Remove All
+        </button>
+        <details className={`dropdown ${noData && 'hidden'}`}>
+          <summary className="m-1 btn">filter</summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li>
+              <a onClick={() => handleFilter("all")}>All</a>
+            </li>
+            <li>
+              <a onClick={() => handleFilter("remote")}>Remote</a>
+            </li>
+            <li>
+              <a onClick={() => handleFilter("onsite")}>OnSite</a>
+            </li>
+          </ul>
+        </details>
+      </div>
+  
+    {noData ? (
+      <p className="flex items-center justify-center text-xl font-semibold h-[50vh] text-center">{noData}</p>
+    ) : (
+      <div className="flex flex-col gap-6 my-4">
+        {displayJobs?.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))}
+      </div>
+    )}
+  </div>
+  </>
   );
 };
 

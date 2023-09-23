@@ -5,10 +5,18 @@ import { useEffect } from "react";
 
 const Root = () => {
   const loc = useLocation();
-  console.log(loc)
+
   useEffect(()=>{
-    console.log(loc.pathname)
-  },[loc.pathname])
+    if(loc.pathname === '/'){
+      document.title = 'Career Hub'
+    } else {
+      document.title = loc.pathname.replace('/', '')
+    }
+    if(loc.state){
+      document.title = loc.state
+    }
+   
+  },[loc.pathname, loc.state])
   return (
     <div>
      <div className="max-w-screen-lg mx-auto pt-4">

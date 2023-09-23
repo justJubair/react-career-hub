@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getJobIdLS, saveJobIdLS } from "../../components/LocalStorage/LocalStorage";
 import { FaDollarSign, FaRegCalendarAlt, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import SecondBanner from "../../components/SecondBanner/SecondBanner";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -30,12 +31,14 @@ const JobDetails = () => {
     } else{
       toast("Successfully applied");
     }
-    console.log(savedJobId)
+
     saveJobIdLS(idInt);
   };
 
   return (
-    <div className="flex flex-col items-start gap-4 max-w-screen-lg mx-auto my-6 md:flex-row">
+   <>
+   <SecondBanner>Job Details</SecondBanner>
+    <div className="flex flex-col items-start gap-4 max-w-screen-lg mx-auto mt-6 mb-24 md:flex-row">
       <div className="w-2/3 space-y-4">
         <p className="text-slate-500">
           <span className="font-semibold text-black">Job Description:</span>{" "}
@@ -120,6 +123,7 @@ const JobDetails = () => {
       </div>
       <ToastContainer />
     </div>
+   </>
   );
 };
 

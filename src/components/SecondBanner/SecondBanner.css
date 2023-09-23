@@ -1,0 +1,6 @@
+.secondBanner{
+    background: url('https://i.ibb.co/26YMcd7/bg2.png'), url('https://i.ibb.co/JvXDw2v/bg1.png');
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: right, left;
+}

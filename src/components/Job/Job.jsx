@@ -1,17 +1,15 @@
 /* eslint-disable no-unused-vars */
 
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { FaMapMarkerAlt, FaDollarSign } from "react-icons/fa";
+
 
 // eslint-disable-next-line react/prop-types
 const Job = ({job}) => {
     // eslint-disable-next-line react/prop-types
     const {id, logo, job_title, company_name, location, job_type, salary, remote_or_onsite} = job
-    const navigate = useNavigate();
-    const handleDetails =()=>{
-        navigate(`/jobDetails/${id}`)
-       
-    }
+   
+  
     
   return (
     <div className="card card-compact bg-base-100 border pt-4">
@@ -36,7 +34,9 @@ const Job = ({job}) => {
         </div>
       </div>
       <div className="card-actions">
-        <button onClick={handleDetails} className="btn text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">View Details</button>
+      
+      <Link to={`/jobDetails/${id}`} state={job_title}>
+      <button  className="btn text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">View Details</button></Link>
       </div>
     </div>
   </div>
