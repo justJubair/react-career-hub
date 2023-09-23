@@ -54,7 +54,7 @@ const AppliedJobs = () => {
   <SecondBanner>Applied Jobs</SecondBanner>
     <div className="mt-8 mb-24">
       <div className="flex justify-between">
-      <button onClick={handleRemoveAll} className={`btn btn-error text-white ${!displayJobs.length && 'hidden'}`}>
+      <button onClick={handleRemoveAll} className={`btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white ${!displayJobs.length && 'hidden'}`}>
           Remove All
         </button>
         <details className={`dropdown ${noData && 'hidden'}`}>
