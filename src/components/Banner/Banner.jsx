@@ -3,7 +3,7 @@ import img from '../../assets/user.png'
 
 const Banner = () => {
   return (
-    <div className="hero ">
+    <div className="hero mt-6">
     <div className="hero-content p-0 flex-col lg:flex-row-reverse">
       <img src={img} className="max-w-sm rounded-lg" />
       <div>
