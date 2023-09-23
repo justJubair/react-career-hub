@@ -13,9 +13,8 @@ const JobDetails = () => {
     job_description,
     job_responsibility,
     salary,
-    location,
-    company_name,
-    id: jobId,
+   
+   
     job_title,
     educational_requirements,
     experiences,
@@ -36,7 +35,7 @@ const JobDetails = () => {
         </p>
         <p className="text-slate-500">
           <span className="font-semibold text-black">Job Responsibility:</span>{" "}
-          <small>{job_description}</small>
+          <small>{job_responsibility}</small>
         </p>
         <p className="text-slate-500">
           <span className="font-semibold text-black">

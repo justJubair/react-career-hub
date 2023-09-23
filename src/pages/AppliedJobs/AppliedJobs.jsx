@@ -2,6 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import { getJobIdLS } from "../../components/LocalStorage/LocalStorage";
 import { useEffect, useState } from "react";
+import JobCard from "./JobCard";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
@@ -14,7 +15,7 @@ const AppliedJobs = () => {
       setAppliedJobs(jobsApplied);
       setDisplayJobs(jobsApplied);
     }
-  }, []);
+  }, [jobs]);
   const handleFilter = (filter) => {
     switch (filter) {
       case "all":
@@ -46,7 +47,8 @@ const AppliedJobs = () => {
   };
   return (
     <div>
-      <details className="dropdown mb-32">
+      <div className="text-right">
+      <details className="dropdown">
         <summary className="m-1 btn">filter</summary>
         <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
           <li>
@@ -60,15 +62,12 @@ const AppliedJobs = () => {
           </li>
         </ul>
       </details>
-      <h1>Total applied jobs:{appliedJobs.length}</h1>
-      {displayJobs.map((job) => (
-        <div key={job.id}>
-          <p>{job.id}</p>
-          <h2>{job.job_title}</h2>
-          <h2>{job.company_name}</h2>
-          <p className="font-bold">{job.remote_or_onsite}</p>
-        </div>
-      ))}
+      </div>
+     <div>
+      {
+        displayJobs.map(job=> <JobCard key={job.id} job={job}/>)
+      }
+     </div>
     </div>
   );
 };
