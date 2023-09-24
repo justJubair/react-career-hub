@@ -18,7 +18,7 @@ const Root = () => {
    
   },[loc.pathname, loc.state])
   return (
-    <div>
+    <div className="p-4">
      <div className="max-w-screen-lg mx-auto pt-4">
      <Header/>
       <Outlet/>

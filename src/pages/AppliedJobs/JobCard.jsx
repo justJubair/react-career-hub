@@ -21,10 +21,10 @@ const JobCard = ({ job }) => {
     navigate(`/jobDetails/${id}`);
   };
   return (
-    <div className="flex items-center justify-between border pt-4 p-6 shadow">
+    <div className="flex flex-col items-center justify-between border pt-4 p-6 shadow md:flex-row">
          <div className="flex items-center gap-3">
          <figure>
-          <img className="w-32" src={logo} alt={company_name} />
+          <img className="md:w-32" src={logo} alt={company_name} />
         </figure>
       <div className="card card-compact bg-base-100 ">
        
@@ -34,7 +34,7 @@ const JobCard = ({ job }) => {
           <h3 className="text-lg">{company_name}</h3>
 
           <div>
-            <button className="btn mr-4 text-[#9873FF] border-[#9873FF] bg-white">
+            <button className="btn mb-2 mr-4 text-[#9873FF] border-[#9873FF] bg-white">
               {remote_or_onsite}
             </button>
             <button className="btn text-[#9873FF] border-[#9873FF] bg-white">

@@ -2,7 +2,7 @@
 
 const Login = () => {
   return (
-   <div className="flex h-[80vh] items-center justify-center my-8">
+   <div className="flex md:h-[80vh] items-center justify-center my-8">
      <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
       <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-r from-[#7E90FE] to-[#9873FF] bg-clip-border text-white shadow shadow-[#9873FF]">
         <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">

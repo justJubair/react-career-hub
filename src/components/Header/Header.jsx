@@ -51,7 +51,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
       <Link to='/login'>
-      <button className="btn text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">Start Applying</button></Link>
+      <button className="btn-sm rounded text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF] md:btn md:text-white">Start Applying</button></Link>
       </div>
     </div>
   );
